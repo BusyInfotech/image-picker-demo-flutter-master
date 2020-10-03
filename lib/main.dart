@@ -21,7 +21,6 @@ ProgressDialog progressDialog;
 TextEditingController qualitycontroller = TextEditingController();
 String quality;
 int len;
-const chars = "abcdefghijklmnopqrstuvwxyz0123456789";
 String result;
 var qualityvalue;
 class MyApp extends StatelessWidget {
