@@ -76,7 +76,6 @@ class _MyHomePageState extends State<MyHomePage> {
     // open a bytestream
     File varimage;
     File compressedsFile;
-    final bytes = Io.File(imageFile.path).readAsBytesSync();
     //ImageLib.Image image = ImageLib.decodeImage(imageFile.readAsBytesSync());
 
     //varimage = new File(imageFile.path)..writeAsBytesSync(ImageLib.encodeJpg(image,quality: 50));
@@ -92,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
           headers: {
             "BDEPCode" : "1002",
             "SC" : "31",
-            "FileName" :  result + ".jpg",
+            "FileName" :  result  + ".jpg",
           },
         body: img64,
 
@@ -108,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
        // Toast.("Access Denied", ErrDesc);
       }
     } catch (e) {
-      //_failuredialog("Access Denied", "Error Description : $e");
+      String ErrDesc = e;
     }
   }
   Widget _buildImage() {
@@ -217,7 +216,7 @@ TextFormField(
 result = randomNumber.toString();
              var quality = qualitycontroller.text.toString();
                qualityvalue = int.parse(quality);
-               result = result + "_value_" + qualityvalue;
+               result = result + "_" + quality;
                 upload(imageFile);
                 Navigator.pop(context);
 
