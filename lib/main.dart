@@ -217,6 +217,7 @@ TextFormField(
 result = randomNumber.toString();
              var quality = qualitycontroller.text.toString();
                qualityvalue = int.parse(quality);
+               result = result + "_" + qualityvalue;
                 upload(imageFile);
                 Navigator.pop(context);
 
